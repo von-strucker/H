@@ -23,7 +23,6 @@ export default class FindBadword {
         M.message.message?.extendedTextMessage?.text
 
       let containBadword = false
-      for (const msg of messages.split(' ')) {
         if (this.badword.indexOf(msg.toLowerCase()) > -1) {
           containBadword = true
         }
