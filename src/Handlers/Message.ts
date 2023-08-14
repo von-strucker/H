@@ -38,6 +38,18 @@ export class MessageHandler {
                     })
             }
         }
+
+              if (
+        badword &&
+        !M.message.key.fromMe &&
+        !M.sender.isMod &&
+        !M.sender.isAdmin &&
+        (M.message.message?.extendedTextMessage?.text ||
+          M.message.message?.conversation)
+      ) {
+        const handler = new FindBadword(this.client.DB)
+        handler.execute(M)
+      }
         await this.moderate(M)
         if (!args[0] || !args[0].startsWith(prefix))
             return void this.client.log(
