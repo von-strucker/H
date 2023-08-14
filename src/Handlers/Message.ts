@@ -39,7 +39,7 @@ export class MessageHandler {
             }
         }
 
-              if (
+     if (
         badword &&
         !M.message.key.fromMe &&
         !M.sender.isMod &&
