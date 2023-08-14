@@ -38,6 +38,10 @@ export class MessageHandler {
                     })
             }
         }
+        
+     const { badword } = await this.client.DB.getGroup(
+        M.from
+      )   
 
      if (
         badword &&
