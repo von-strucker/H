@@ -16,18 +16,6 @@ export default class FindBadword {
   public execute = async (M: Message): Promise<void> => {
     const user = await this.database.findUser(M.sender.jid)
 
-    if (user) {
-      let badwordUser = user.badwordCount
-      const messages =
-        M.message.message?.conversation ||
-        M.message.message?.extendedTextMessage?.text
-
-      let containBadword = false
-        if (this.badword.indexOf(msg.toLowerCase()) > -1) {
-          containBadword = true
-        }
-      }
-
       if (containBadword && badwordUser !== this.maxBadWord) {
         badwordUser += 1
         await this.database.updateUser(
