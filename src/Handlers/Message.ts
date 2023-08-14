@@ -5,7 +5,7 @@ import { Message, Client, BaseCommand } from '../Structures'
 import { getStats } from '../lib'
 import { ICommand, IArgs } from '../Types'
 import axios from 'axios'
-import FindBadword from './FIndBadword'
+import FindBadword from './FindBadword'
 
 export class MessageHandler {
     constructor(private client: Client) {}
