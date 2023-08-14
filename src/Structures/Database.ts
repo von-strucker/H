@@ -17,6 +17,9 @@ import {
 import { Utils } from '../lib'
 
 export class Database {
+    public findUser = async (jid: string): Promise<TUserModel | null> =>
+    (await this.user.findOne({ jid })) || null
+    
     public getUser = async (jid: string): Promise<TUserModel> =>
         (await this.user.findOne({ jid })) ||
         (await new this.user({ jid, tag: this.utils.generateRandomUniqueTag() }).save())
